@@ -332,6 +332,16 @@ and $z$.
 	%Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{150pt}{
+    \begin{align}
+      \text{In the standard basis: }& \mathbf{r}(t) = x(t) \mathbf{e}_x + y(t) \mathbf{e}_y + z(t) \mathbf{e}_z\\
+      \mathbf{\dot r}(t) &= \dot x \mathbf{e}_x + x \dot{\mathbf{e}_x} + \dot y \mathbf{e}_y + y \dot{\mathbf{e}_y} + \dot z \mathbf{e}_z + z \dot{\mathbf{e}_z}\\
+      \text{Since }& \mathbf{e}_x, \mathbf{e}_y, \mathbf{e}_z \text{ are constant, } \dot{\mathbf{e}_x} = \dot{\mathbf{e}_y} = \dot{\mathbf{e}_z} = 0\\
+      \therefore \mathbf{\dot r}(t) &= \dot x \mathbf{e}_x + \dot y \mathbf{e}_y + \dot z \mathbf{e}_z\\
+      \text{In the cylindrical basis: }& \mathbf{r}(t) = r(t) \mathbf{e}_r + z(t) \mathbf{e}_z\\
+      \mathbf{\dot r}(t) &= \dot r \mathbf{e}_r + r \dot{\mathbf{e}_r} + \dot z \mathbf{e}_z + z \dot{\mathbf{e}_z}\\
+      \text{Since }& \mathbf{e}_z \text{ is constant, } \dot{\mathbf{e}_z} = 0\\
+      \therefore \mathbf{\dot r}(t) &= \dot r \mathbf{e}_r + r \dot{\mathbf{e}_r} + \dot z \mathbf{e}_z
+    \end{align}
 
 	%%% Your work goes here! 
 
