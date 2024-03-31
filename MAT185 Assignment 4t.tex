@@ -562,7 +562,16 @@ $\mathbf{\dot r}$ using the cylindrical basis.
 	%%% Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{230pt}{
-
+    $$ \dot{\mathbf{r}} = -v\cos(\alpha) \mathbf{e}_r + v\sin(\alpha) \mathbf{e}_\varphi = \dot r \mathbf{e}_r + r \dot \varphi \mathbf{e}_\varphi + \dot z \mathbf{e}_z$$
+    $$ \Rightarrow \dot r = -v\cos(\alpha), r \dot \varphi = v\sin(\alpha)$$
+    Since $v$ and $\alpha$ are constants, $\ddot r = 0$ and $ \frac{d}{dt} (r \dot \varphi) = \dot r \dot \varphi + r \ddot \varphi = 0$. 
+    Using the result from Question 2(c), we have:
+    $$ \mathbf{\ddot r} = (\ddot r - r {\dot \varphi}^2) \mathbf{e}_r + (2 \dot r \dot \varphi + r \ddot \varphi) \mathbf{e}_\varphi + \ddot z \mathbf{e}_z = - r {\dot \varphi}^2 \mathbf{e}_r + \dot r \dot \varphi \mathbf{e}_\varphi + 0 \mathbf{e}_z$$
+    $$ r = \int -v\cos(\alpha) \,dt = -v\cos(\alpha)t + C $$
+    $$ r \dot{\varphi}^2 = \frac{(r \dot \varphi)^2}{r} = \frac{v^2 \sin^2(\alpha)}{-v\cos(\alpha)t + C} = \frac{v \sin(\alpha) \tan(\alpha)}{-t + C} $$
+    Therefore the acceleration of the moth in $\mathbf{e}_r$ direction is:
+    $$ \mathbf{a}_r = - r {\dot \varphi}^2 \mathbf{e}_r = \frac{v \sin(\alpha) \tan(\alpha)}{t + C} \mathbf{e}_r$$
+    Where $C$ is a constant of integration.
           %%% Your work goes here! 
 
 	}
