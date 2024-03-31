@@ -415,7 +415,44 @@ also that $\varphi = \varphi(t)$ is time-dependent.
       - \cos(\varphi) \dot \varphi & - \sin(\varphi) \dot \varphi & 0\\
       0 & 0 & 0
     \end{bmatrix}$$
-    P is the change of base matrix from the standard basis to the cylindrical basis. 
+    To get the transformation matrix from the cylindrical basis to the time derivative of the cylindrical basis, 
+    we can multiply the $\mathbf{T}_{\dot{c} s}$ to a matrix that transforms the standard basis to the cylindrical basis.
+    P is the change of base matrix from the standard basis to the cylindrical basis, 
+    therefore the inverse of P is the change of base matrix from the cylindrical basis to the standard basis:
+    $$ \mathbf{D} = \mathbf{T}_{\dot{c} s} \mathbf{P}^{-1} $$
+    $$
+      \mathbf{P} = \begin{bmatrix}
+        \cos(\varphi) & \sin(\varphi) & 0\\
+        - \sin(\varphi) & \cos(\varphi) & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    $$
+    $$
+    \Rightarrow
+      \mathbf{P}^{-1} = \begin{bmatrix}
+        \cos(\varphi) & - \sin(\varphi) & 0\\
+        \sin(\varphi) & \cos(\varphi) & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+    $$
+    $$
+    \mathbf{D} = \mathbf{T}_{\dot{c} s} \mathbf{P}^{-1}
+      = \begin{bmatrix}
+        - \sin(\varphi) \dot \varphi & \cos(\varphi) \dot \varphi & 0\\
+        - \cos(\varphi) \dot \varphi & - \sin(\varphi) \dot \varphi & 0\\
+        0 & 0 & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+        \cos(\varphi) & - \sin(\varphi) & 0\\
+        \sin(\varphi) & \cos(\varphi) & 0\\
+        0 & 0 & 1
+      \end{bmatrix}
+      = \begin{bmatrix}
+        0 & \dot \varphi & 0\\
+        - \dot \varphi & 0 & 0\\
+        0 & 0 & 0
+      \end{bmatrix}
+    $$
 
     %%% Your work goes here!
 
@@ -438,6 +475,12 @@ $\mathbf{e}_r$, $\mathbf{e}_\varphi$, and $\mathbf{e}_z$.
 	%%% Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{200pt}{
+    From matrix $\mathbf{D}$, we have:
+    $$ \dot{\mathbf{e}_r} = \dot \varphi \mathbf{e}_\varphi $$
+    $$ \dot{\mathbf{e}_\varphi} = - \dot \varphi \mathbf{e}_r $$
+    Therefore, the first time derivative of $\mathbf{r}$ in the cylindrical basis is:
+    $$ \mathbf{\dot r}(t) = \dot r \mathbf{e}_r + r \dot{\mathbf{e}_r} + \dot z \mathbf{e}_z = \dot r \mathbf{e}_r + r \dot \varphi \mathbf{e}_\varphi + \dot z \mathbf{e}_z $$
+
 
 	%%% Your work goes here! 
           
@@ -456,6 +499,12 @@ $\mathbf{e}_r$, $\mathbf{e}_\varphi$, and $\mathbf{e}_z$.
 	%%% Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{200pt}{
+    \begin{align}
+      \mathbf{\ddot r} &= \frac{d}{dt} (\dot r \mathbf{e}_r + r \dot \varphi \mathbf{e}_\varphi + \dot z \mathbf{e}_z) = \ddot r \mathbf{e}_r + \dot r \dot{\mathbf{e}_r} + \dot r \dot \varphi \mathbf{e}_\varphi + \dot r \varphi \mathbf{e}_\varphi + r \ddot \varphi \mathbf{e}_\varphi + r \dot \varphi \dot{\mathbf{e}_\varphi} + \ddot z {\mathbf{e}_z}\\
+      &= \ddot r \mathbf{e}_r + 2 \dot r \dot \varphi \mathbf{e}_\varphi + \dot r \varphi \mathbf{e}_\varphi + r \ddot \varphi \mathbf{e}_\varphi - r {\dot \varphi}^2 \mathbf{e}_r + \ddot z {\mathbf{e}_z}\\
+      &= (\ddot r - r {\dot \varphi}^2) \mathbf{e}_r + (2 \dot r \dot \varphi + \dot r \varphi + r \ddot \varphi) \mathbf{e}_\varphi + \ddot z \mathbf{e}_z
+    \end{align}
+    
 
 	%%% Your work goes here! 
           
