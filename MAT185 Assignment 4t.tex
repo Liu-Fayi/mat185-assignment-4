@@ -362,6 +362,10 @@ $$\veccoll{\mathbf{e}_r}{\mathbf{e}_\varphi}{\mathbf{e}_z} = \mathbf{P}
 	%%% Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{300pt}{
+    $$\mathbf{e_r} = \mathbf{e_x} \cos(\varphi) + \mathbf{e_y} \sin(\varphi)$$
+    $$\mathbf{e_\varphi} = - \mathbf{e_x} \sin(\varphi) + \mathbf{e_y} \cos(\varphi)$$
+    $$\mathbf{e_z} = \mathbf{e_z}$$
+    Therefore, the transformation matrix $\mathbf{P}$ is
     $$
       \mathbf{P} = \begin{bmatrix}
         \cos(\varphi) & \sin(\varphi) & 0\\
@@ -402,8 +406,18 @@ also that $\varphi = \varphi(t)$ is time-dependent.
 	%%% Do not change the height of this box. Your work must fit inside it.
 	
 	\makenonemptybox{450pt}{
-          
-          %%% Your work goes here!
+    $$ \dot{\mathbf{e}_r} = \frac{d}{dt} (\mathbf{e}_x \cos(\varphi) + \mathbf{e}_y \sin(\varphi)) = - \mathbf{e}_x \sin(\varphi) \dot \varphi + \mathbf{e}_y \cos(\varphi) \dot \varphi$$
+    $$ \dot{\mathbf{e}_\varphi} = \frac{d}{dt} (- \mathbf{e}_x \sin(\varphi) + \mathbf{e}_y \cos(\varphi)) = - \mathbf{e}_x \cos(\varphi) \dot \varphi - \mathbf{e}_y \sin(\varphi) \dot \varphi$$
+    $$ \dot{\mathbf{e}_z} = 0$$
+    Therefore, the transformation matrix from standard basis to the time derivative of the cylindrical basis is:
+    $$ \mathbf{T}_{\dot{c} s} = \begin{bmatrix}
+      - \sin(\varphi) \dot \varphi & \cos(\varphi) \dot \varphi & 0\\
+      - \cos(\varphi) \dot \varphi & - \sin(\varphi) \dot \varphi & 0\\
+      0 & 0 & 0
+    \end{bmatrix}$$
+    P is the change of base matrix from the standard basis to the cylindrical basis. 
+
+    %%% Your work goes here!
 
 	}
 }
